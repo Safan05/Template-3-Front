@@ -1,6 +1,7 @@
 :root{
     --main-color:#2196f3;
     --sec-background: #ececec;
+    --main-padding:100px;
 }
 *{
 	-webkit-box-sizing: border-box; 
@@ -287,5 +288,81 @@ ul{
     }
     .Landing .container .Welcome p{
         font-size: 20px;
+    }
+}
+.Article{
+    position: relative;
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+}
+.MainTitle{
+    position: relative;
+    border: solid;
+    text-transform: uppercase;
+    width: fit-content;
+    padding: 10px 15px;
+    font-size: 30px;
+    margin: 0 auto 80px;
+}
+.MainTitle::after{
+    position: absolute;
+    content: "";
+    border-radius: 50%;
+    background-color: var(--main-color);
+    width: 12px;
+    right: -30px;
+    height: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.MainTitle::before{
+    position: absolute;
+    content: "";
+    border-radius: 50%;
+    background-color: var(--main-color);
+    width: 12px;
+    height: 12px;
+    left:-30px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.MainTitle:hover::after{
+    animation: leftg 0.5s linear forwards;
+}
+.MainTitle:hover::before{
+    animation: rightg 0.5s linear forwards;
+}
+.MainTitle:hover{
+    color:white;
+    transition-delay: 0.5s;
+}
+@keyframes leftg {
+    0%{
+        right: -30px;
+    }
+    50%{
+        right:0px;
+    }
+    100%{
+        right:0px;
+        border-radius: 0px;
+        width:50%;
+        height:100%;
+        z-index: -1;
+    }
+}
+@keyframes rightg {
+    0%{
+        left: -30px;
+    }
+    50%{
+        left:0px;
+    }
+    100%{
+        left:0px;
+        border-radius: 0px;
+        width:50%;
+        height:100%;
+        z-index: -1;
     }
 }
