@@ -477,7 +477,7 @@ animation: flashing 0.7s;
     border-color: transparent transparent white transparent;
     border-width: 0 0 130px 400px;
     border-style: solid;
-    transition: 0.3s;
+    transition: 0.4s;
 }
 .Features .container .image::after{
     content: "";
@@ -528,13 +528,40 @@ background-color: rgba(255, 125, 125, 0.704);
     color:#777;
 }
 .Features .container .more{
-    margin-left: auto;
-    margin-right: auto;
-    width: fit-content;
     padding: 10px 30px;
     border-radius: 5px;
     font-weight: 800;
     font-size: 24px;
+    transition: 0.4s;
+}
+.Features .container a{
+    overflow: hidden;
+    position: relative;
+    display: block;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+.Features .container a::before{
+    position: absolute;
+    content: "";
+    z-index: -1;
+    opacity: 1;
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    left: -100%;
+    transition: 0.4s;
+    bottom: 0;
+}
+.Features .container .box-1 a::before{
+background-color:rgb(255, 85, 125);
+}
+.Features .container .box-2 a::before{
+    background-color:rgb(26, 106, 78);
+}
+.Features .container .box-3 a::before{
+   background-color:  rgb(60, 180, 255);
 }
 .Features .container .box-1 .more{
     border: solid rgb(255, 85, 125) 3px;
@@ -548,14 +575,26 @@ background-color: rgba(255, 125, 125, 0.704);
 .Features .container .more a{
     text-decoration: none;
 }
-.Features .container .box-1 .more a{
+.Features .container .box-1 .more {
     color:rgb(255, 85, 125);
 }
-.Features .container .box-2 .more a{
+.Features .container .box-2 .more {
     color:rgb(26, 106, 78);
 }
-.Features .container .box-3 .more a{
+.Features .container .box-3 .more {
     color:rgb(60, 180, 255);
+}
+.Features .container .box-1:hover a::before,.box-2:hover a::before,.box-3:hover a::before{
+    left: 0%;
+}
+.Features .container .box-1:hover .more{
+    color: white;
+}
+.Features .container .box-2:hover .more{
+    color: white;
+}
+.Features .container .box-3:hover .more{
+    color: white;
 }
 /*Features End*/
 /*Animations start*/
