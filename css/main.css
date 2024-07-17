@@ -8,6 +8,10 @@
 	-moz-box-sizing: border-box; /** for defining glopal box sizing on firefox**/
 	box-sizing: border-box;
 }
+html {
+
+    scroll-behavior: smooth;
+}
 body {
   font-family: "Cairo", sans-serif;
   font-optical-sizing: auto;
@@ -20,6 +24,9 @@ body {
     padding-right: 15px;
     margin-left: auto;
     margin-right: auto;
+}
+a{
+    text-decoration: none;
 }
 ul{
     margin: 0;
@@ -46,6 +53,7 @@ ul{
 }
 
 .header{
+    padding-top: 15px;
     position: relative;
     box-shadow: black 0px -5px 12px;
     background-color: white;
@@ -171,11 +179,7 @@ ul{
 }
 @media (max-width: 768px){
     .header .container .icon{
-      width:100%;
       height: 50px;
-    }
-    .header .container > ul{
-        width:100%;
     }
     .header .container .navigator li a{
         padding-left: 10px;
@@ -196,6 +200,14 @@ ul{
     .MegaMenu{
         justify-content: center;
     }
+  }
+  @media (max-width:1200px){
+    .header .container > ul{
+        width:100%;
+    }
+    .header .container .icon{
+        width:100%;
+      }
   }
 /*Landing*/
 .Landing{
@@ -327,14 +339,14 @@ ul{
     transform: translateY(-50%);
 }
 .MainTitle:hover::after{
-    animation: leftg 0.5s linear forwards;
+    animation: leftg 0.7s linear forwards;
 }
 .MainTitle:hover::before{
-    animation: rightg 0.5s linear forwards;
+    animation: rightg 0.7s linear forwards;
 }
 .MainTitle:hover{
     color:white;
-    transition-delay: 0.5s;
+    transition-delay: 0.7s;
 }
 @keyframes leftg {
     0%{
@@ -366,3 +378,64 @@ ul{
         z-index: -1;
     }
 }
+/*Article Start*/
+.Article .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(240px,1fr));
+    gap:40px
+}
+.Article .container .card{
+    box-shadow: var(--sec-background) 7px 7px 6px;
+    border-radius: 10px;
+    background-color: white;
+    overflow: hidden;
+    transition: 0.3s;
+}
+.Article .container .card img{
+    width: 100%;
+    max-width: 100%;
+    height: 170px;
+}
+.Article .container .card .content{
+    padding: 20px;
+    height: 250px;
+}
+.Article .container .card .content h4{
+    font-size: 18px;
+}
+.Article .container .card .content p{
+    color: gray;
+    line-height: 150%;
+}
+.Article .container .card .cardfooter{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-top: solid var(--sec-background) 1px;
+}
+.Article .container .card .cardfooter a{
+    color: var(--main-color);
+    font-weight: 800;
+}
+.Article .container .card .cardfooter i{
+    color: var(--main-color);
+    font-weight: 800;
+}
+.Article .container .card:hover{
+    box-shadow: var(--sec-background) 0px 0px 6px 6px;
+    transform: translateY(-14px);
+}
+.Article .container .card:hover .cardfooter i{
+    animation: hbounce 0.6s linear infinite;
+}
+@keyframes hbounce {
+    0%{
+        transform: translateX(0);   
+    }
+    100%{
+        transform: translateX(8px);
+    }
+}
+/*Article End*/
