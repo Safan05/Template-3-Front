@@ -24,6 +24,25 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
+/** small screens **/
+@media (min-width: 768px){
+    .container{
+      width:750px;
+    }
+  }
+  /** medium screens **/
+  @media (min-width: 970px){
+    .container{
+      width:950px;
+    }
+  }
+  /** large screens **/
+  @media (min-width: 1200px){
+    .container{
+      width:1170px;
+    }
+  }
+  
 a{
     text-decoration: none;
 }
@@ -72,24 +91,6 @@ ul{
 .MainTitle:hover{
     color:white;
     transition-delay: 0.7s;
-}
-/** small screens **/
-@media (min-width: 768px){
-  .container{
-    width:750px;
-  }
-}
-/** medium screens **/
-@media (min-width: 970px){
-  .container{
-    width:950px;
-  }
-}
-/** large screens **/
-@media (min-width: 1200px){
-  .container{
-    width:1170px;
-  }
 }
 
 .header{
@@ -607,8 +608,9 @@ background-color:rgb(255, 85, 125);
     background-color: var(--sec-background);
 }
 .Testimonals .container{
+    padding-top: 50px;
     display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 50px;
 }
 .Testimonals .container .Title{
@@ -642,6 +644,71 @@ background-color:rgb(255, 85, 125);
     top: -30%;
 }
 /*Testimonals End*/
+/*Team members start*/
+.TeamMembers{
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+}
+.TeamMembers .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+}
+.TeamMembers .container .card{
+    position: relative;
+}
+.TeamMembers .container .card::before{
+    content: "";
+    position: absolute;
+    width: calc(100% - 60px);
+    height: 100%;
+    background-color: var(--sec-background);
+    right: 0px;
+    top: 0px;
+    border-radius: 10px;
+    z-index: -2;
+}
+.TeamMembers .container .card::after{
+    content: "";
+}
+.TeamMembers .container .image {
+    display: flex;
+    align-items: center;
+    padding-top: 50px;
+}
+.TeamMembers .container .image .icons{
+    width: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+.TeamMembers .container .image .icons i{
+    font-size: 16px;
+    transition:0.3s;
+}
+.TeamMembers .container .image .icons i:hover{
+    color: var(--main-color);
+}
+.TeamMembers .container .content{
+    padding-left: 80px;
+}
+.TeamMembers .container .content h3{
+    color: var(--main-color);
+    font-weight: 800;
+    font-size: 24px;
+}
+.TeamMembers .container .content p{
+    font-size: 18px;
+    font-weight: 600;
+}
+.TeamMembers .container .image img{
+    width: calc(100% - 60px);
+    max-width: 100%;
+    position: relative;
+    border-radius: 10px;
+}
+/*Team members End*/
 /*Animations start*/
 @keyframes flashing{
     0%,40%{
