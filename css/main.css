@@ -234,6 +234,10 @@ ul{
         gap: 0;
         /*I can make display:block too*/
     }
+    .How .container{
+        flex-direction: column;
+        gap: 0;
+    }
   }
   @media (max-width:970px){
     .MegaMenu .photo {
@@ -840,7 +844,28 @@ background-color:rgb(255, 85, 125);
     max-width: 50%;
     width: 50%;
 }
-.Skills .container .per{
+.Skills .container .perbox{
+    position: relative;
+    border-color: #777;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 30px 5px var(--sec-background);
+    color: var(--main-color);
+    font-size: 12px;
+    font-weight: 800;
+    width: 30px;
+    height: 20px;
+    /* top: 50%; */
+}
+.Skills .container .perbox p{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.Skills .container .per1,.per2,.per3{
     position: absolute;
     width: 100%;
     height: 30px;
@@ -848,7 +873,70 @@ background-color:rgb(255, 85, 125);
     right: 0%;
     top: 50px;
 }
+.Skills .container .per1::before,.per2::before,.per3::before{
+    content: "";
+    position: absolute;
+    height: 30px;
+    background-color: var(--main-color);
+    left: 0;
+    top: 0;
+}
+.Skills .container .per1::before{
+    width: 98%;
+}
+.Skills .container .per2::before{
+    width: 86%;
+}
+.Skills .container .per3::before{
+    width: 76%;
+}
 /*Skills End*/
+/*How Begins*/
+.How{
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+    background-color: var(--sec-background);
+    position: relative;
+    z-index: 0;
+}
+.How .container{
+    display: flex;
+    justify-content: space-between;
+}
+.How .image img{
+    max-width: 100%;
+    width:100%
+}
+.How .cards .card{
+    display: flex;
+    background-color: #f6f5f5;
+    border-color: white;
+    border-radius: 10px;
+    border-style: solid;
+    padding: 10px;
+    width: 100%;
+    align-items: center;
+}
+.How .cards .card h3{
+    font-size: 28px;
+    text-transform: uppercase;
+}
+.How .cards{
+    display: flex;
+    flex-direction: column;
+    gap:20px
+}
+.How .cards .card p{
+    font-size: 20px;
+    color:#777;
+}
+.How .cards .card img{
+    padding-right: 10px;
+    max-width: 100%;
+    width:30%;
+    height:50%;
+}
+/*How End*/
 /*Animations start*/
 @keyframes flashing{
     0%,40%{
